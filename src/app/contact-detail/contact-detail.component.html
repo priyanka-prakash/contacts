@@ -1,1 +1,19 @@
-<p>contact-detail works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table>
+                <div style="float:right;">
+                    <img width="60px;" src="{{contactDetail.avatar}}" alt="">
+                </div>
+                <tr >
+                    <td><label for="">Name</label> : </td>
+                    <td>{{contactDetail.first_name+" "+contactDetail.last_name}}</td>
+                </tr>
+                <tr >
+                    <td><label for="">Email</label> : </td>
+                    <td>{{contactDetail.email}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { contactService } from '../services/contacts.service';
+import { ActivatedRoute } from "@angular/router";
+import { Contacts} from  '../contacts';
+
 
 @Component({
   selector: 'app-contact-detail',
@@ -6,17 +10,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact-detail.component.css']
 })
 export class ContactDetailComponent implements OnInit {
+  contactDetail:Contacts;
 
-  constructor() { }
-
+  id: number;
+  constructor(private contactService:contactService, private activatedRoute:ActivatedRoute) { 
+    
+  }
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(
+      params => (this.id = parseInt(params['id'], 10))
+    );
+    this.getContactDetail(this.id);
   }
 
-  // showDetail(){
-  //   this.contactService.getContactListData().subscribe( contactlistData => {
-  //     console.log(contactlistData);
-  //     this.contactLists = contactlistData.data;
-  //   });
-  // }
+    getContactDetail(id){
+      this.contactService.getContactDetail(id).subscribe((contactdetailData: any)=>{
+        console.log("detail : ",contactdetailData.data);
+        this.contactDetail= contactdetailData.data;
+    })  
+  }
 
 }
+
+

@@ -1,16 +1,31 @@
-<h2>Contacts List</h2>
-<table > 
-    <thead>
-        <th>No: </th>
-        <th>Name</th>
-    </thead>
-    <tbody>
-        <tr *ngFor = "let contact of contactLists; let i = index">
-            <td> {{i+1}}</td>
-            <a routerLink= "/contact/{{contact.id}}">
-                {{ contact.first_name }}
-            </a>
-            <td>  <a href="getContact/{{contact.id}}"> {{contact.first_name+" "+contact.last_name}} </a> </td>
-        </tr>
-    </tbody>
-</table>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Contacts List</h2>
+            <table > 
+                <thead>
+                    <th>No: </th>
+                    <th>Name</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let contact of contactLists; let i = index">
+                        <td> {{i+1}}</td>
+                        <td>  <a [routerLink]="['/contactdetail/', contact.id]"> {{contact.first_name+" "+contact.last_name}} </a> </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <div class="pull-left">
+                <button [routerLink]="['/contactFullDetails']" class="btn btn-primary">
+                    All Details
+                </button>
+            </div>
+            <div >
+                <button style="margin-left:10px;" [routerLink]="['/ListUsingDatatable']" class="btn btn-info">
+                    Datatable
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
