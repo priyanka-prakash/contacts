@@ -11,10 +11,6 @@ export class contactService{
         console.log("service ");
     }
 
-    // public get(){
-    //     return this.httpClient.get("http://server.com/endpoint");
-    // }
-
     getContactListData(){
         console.log("from service get data");
         return this.HttpClient.get(this.ListUrl).pipe(
@@ -24,18 +20,14 @@ export class contactService{
         );
     }
 
-    // getContactDetail (id){
-    //     console.log("from service get data");
-    //     return this.HttpClient.get(this.DetailUrl).pipe(
-    //         map(contactDetail=>{
-    //             return contactDetail;
-    //         })
-    //     );
-    // }
-
     getContactDetail(id){
         return this.HttpClient.get("https://reqres.in/api/users/"+id);
     }
 
+    register(data){
+        return this.HttpClient.post<any>('https://reqres.in/api/register', data);
+    }
+
+  
 
 }

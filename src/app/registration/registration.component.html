@@ -1,0 +1,42 @@
+<p>registration works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+                <div class="col-md-6">
+                    <label>
+                        First Name:
+                      </label>
+                      <input class="form-control"type="text" formControlName="name">
+                </div>
+                <div class="col-md-6">
+                    <label>
+                        Last Name:
+                    </label>
+                    <input class="form-control" type="text" formControlName="year">
+                </div>
+                <div class="col-md-6">
+                    <label>
+                        Last Name:
+                    </label>
+                    <input class="form-control" type="text" formControlName="color">
+                </div>
+                <div class="col-md-6">
+                    <label>
+                        Last Name:
+                    </label>
+                    <input class="form-control" type="text" formControlName="pantone_value">
+                </div>
+                <br>
+                <div>
+                    <button class="btn btn-info btn-large" type="submit" [disabled]="!profileForm.valid" style="text-align: center;">Submit</button>
+
+                </div>
+
+            
+              </form>
+              
+        </div>
+    </div>
+</div>
+

@@ -1,4 +1,23 @@
 <div class="container">
+    <div class="row"><br>
+        <div class="col-md-12">
+            <div class="pull-left">
+                <button [routerLink]="['/contactFullDetails']" class="btn btn-primary">
+                    All Details
+                </button>
+                <button style="margin-left:10px;" [routerLink]="['/ListUsingDatatable']" class="btn btn-info">
+                    Datatable
+                </button>
+                <button style="margin-left:10px;" [routerLink]="['/Datatable']" class="btn btn-warning">
+                    Ang Datatable
+                </button>
+                <button style="margin-left:10px;" [routerLink]="['/Registration']" class="btn btn-warning">
+                   Register
+                </button>
+            </div>
+        </div>
+    </div>
+    <hr>
     <div class="row">
         <div class="col-md-12">
             <h2>Contacts List</h2>
@@ -14,17 +33,7 @@
                     </tr>
                 </tbody>
             </table>
-            <br>
-            <div class="pull-left">
-                <button [routerLink]="['/contactFullDetails']" class="btn btn-primary">
-                    All Details
-                </button>
-            </div>
-            <div >
-                <button style="margin-left:10px;" [routerLink]="['/ListUsingDatatable']" class="btn btn-info">
-                    Datatable
-                </button>
-            </div>
+            
         </div>
     </div>
 </div>

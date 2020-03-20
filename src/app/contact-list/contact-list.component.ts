@@ -16,7 +16,7 @@ export class ContactListComponent implements OnInit {
 
   contactList(){
     this.contactService.getContactListData().subscribe((contactlistData: any)=>{
-      // console.log(contactlistData);
+      console.log(contactlistData);
       this.contactLists = contactlistData.data;
     })  
   }
