@@ -10,7 +10,7 @@ import { Contacts} from  '../contacts';
   styleUrls: ['./contact-detail.component.css']
 })
 export class ContactDetailComponent implements OnInit {
-  contactDetail:Contacts;
+  contactDetail:Icontacts;
 
   id: number;
   constructor(private contactService:contactService, private activatedRoute:ActivatedRoute) { 
@@ -23,7 +23,7 @@ export class ContactDetailComponent implements OnInit {
     this.getContactDetail(this.id);
   }
 
-    getContactDetail(id){
+  getContactDetail(id){
       this.contactService.getContactDetail(id).subscribe((contactdetailData: any)=>{
         console.log("detail : ",contactdetailData.data);
         this.contactDetail= contactdetailData.data;
@@ -33,3 +33,10 @@ export class ContactDetailComponent implements OnInit {
 }
 
 
+export interface Icontacts{
+  id: number;
+  first_name:string;
+  last_name: string;
+  email: string;
+  avatar: string;
+}

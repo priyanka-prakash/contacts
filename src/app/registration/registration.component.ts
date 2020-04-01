@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import {  FormArray,Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { contactService} from '../services/contacts.service';
+
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -8,31 +9,51 @@ import { contactService} from '../services/contacts.service';
 })
 export class RegistrationComponent implements OnInit {
   data:any;
-  constructor(private contactService:contactService) { 
+  constructor(private contactService:contactService,private formbuilder: FormBuilder) { 
   }
 
-  ngOnInit(): void {
-   
-  }
 
-  profileForm = new FormGroup({
-    // firstName: new FormControl(''),
-    // lastName: new FormControl(''),
-    name : new FormControl(''),
-    year : new FormControl(''),
-    color:new FormControl(''),
-    pantone_value:new FormControl('')
+  profileForm = this.formbuilder.group({
+    first_name: ['', Validators.required],
+    last_name: [''],
+    email:['', Validators.required],
+    phone:['', Validators.minLength(4)], 
+    skillsArray: this.formbuilder.array([ ])
 
+    
+    
   });
 
+  arrayItems: {
+    id: number;
+    title: string;
+  }[];
+
+
+  ngOnInit(): void {
+    this.arrayItems = [];
+  }
+
   onSubmit() {
-    // TODO: Use EventEmitter with form value
-    console.warn(this.profileForm.value);
+    console.log(this.profileForm.value);
     this.data = this.profileForm.value; 
-    this.contactService.register(this.data).subscribe((res:any)=>{
-      console.log("res",res);
-    })
+  }
+
+
+  get skillsArray() {
+    return this.profileForm.get('skillsArray') as FormArray;
+  }
+
+  addItem(item) {
+      this.arrayItems.push(item);
+      this.skillsArray.push(this.formbuilder.control(''));
+  }
+
+  removeItem() {
+      this.arrayItems.pop();
+      this.skillsArray.removeAt(this.skillsArray.length - 1);
   }
 
 
 }
+

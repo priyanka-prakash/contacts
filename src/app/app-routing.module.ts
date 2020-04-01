@@ -6,6 +6,8 @@ import { ContactfullDetailComponent } from './contactfull-detail/contactfull-det
 import { DatatablesComponent } from './datatables/datatables.component';
 import { AngDatatableComponent } from './ang-datatable/ang-datatable.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
+import { HomeComponent } from './home/home.component';
 
 
 const routes: Routes = [
@@ -14,7 +16,9 @@ const routes: Routes = [
   { path: 'contactFullDetails', component: ContactfullDetailComponent},
   { path: 'Datatable', component: DatatablesComponent},
   { path: 'ListUsingDatatable', component: AngDatatableComponent},
-  { path: 'Registration', component: RegistrationComponent},  
+  { path: 'Registration', component: RegistrationComponent},
+  { path: 'DynamicForm', component: DynamicFormComponent},
+  { path: 'Interaction', component: HomeComponent}
 ];
 
 @NgModule({

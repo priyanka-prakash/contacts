@@ -20,6 +20,10 @@ import { DatatablesComponent } from './datatables/datatables.component';
 import { DataTablesModule } from 'angular-datatables';
 import { AngDatatableComponent } from './ang-datatable/ang-datatable.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
+import { HomeComponent } from './home/home.component';
+import { ChildComponent } from './child/child.component';
+
 
 
 @NgModule({
@@ -31,7 +35,10 @@ import { RegistrationComponent } from './registration/registration.component';
     ContactfullDetailComponent,
     DatatablesComponent,
     AngDatatableComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    DynamicFormComponent,
+    HomeComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,

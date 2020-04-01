@@ -1,41 +1,75 @@
-<p>registration works!</p>
 <div class="container">
     <div class="row">
         <div class="col-md-10">
+            <h3 class="text-center">Form</h3>
             <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
                 <div class="col-md-6">
                     <label>
                         First Name:
                       </label>
-                      <input class="form-control"type="text" formControlName="name">
+                      <input class="form-control" type="text" formControlName="first_name" required>
                 </div>
                 <div class="col-md-6">
                     <label>
                         Last Name:
                     </label>
-                    <input class="form-control" type="text" formControlName="year">
+                    <input class="form-control" type="text" formControlName="last_name">
                 </div>
                 <div class="col-md-6">
                     <label>
-                        Last Name:
+                        Email:
                     </label>
-                    <input class="form-control" type="text" formControlName="color">
+                    <input class="form-control" type="text" formControlName="email">
                 </div>
                 <div class="col-md-6">
-                    <label>
-                        Last Name:
-                    </label>
-                    <input class="form-control" type="text" formControlName="pantone_value">
+                    <div>
+                        <label>
+                            Phone:
+                        </label>
+                        <input class="form-control" type="number" formControlName="phone">
+                    </div>
                 </div>
                 <br>
-                <div>
-                    <button class="btn btn-info btn-large" type="submit" [disabled]="!profileForm.valid" style="text-align: center;">Submit</button>
 
+                <div class="col-md-6">
+                    <br>
+                    <div>
+                        <button type="button" class="btn btn-primary" (click)="addItem(item)">
+                            Add Skill
+                        </button>
+                    </div>
+                    <!-- Dynamic fields  -->
+                    <div formArrayName="skillsArray" 
+                        *ngFor="let arrayItem of arrayItems; let i=index">
+                            
+                            <label  class="array-item-title">
+                                Skill {{i+1}}</label>
+                        <input type="text" class="form-control"
+                        [formControlName]="i">
+                       
+                    
+                    </div>
+
+                     <!-- <span (click)="removeItem()" style="color: red;">
+                            Remove
+                        </span> -->
                 </div>
-
+                
+               
+                
+                <div class="col-md-12" style="margin-top: 20px;">
+                    
+                    <button class="btn btn-info btn-large "type="submit"  style="text-align: center;">Submit</button>
+                </div>
+                <!-- [disabled]="!profileForm.valid"  -->
             
               </form>
-              
+              {{profileForm.value.first_name}}
+
+
+
+             
+
         </div>
     </div>
 </div>

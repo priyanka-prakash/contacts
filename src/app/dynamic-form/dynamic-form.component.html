@@ -1,0 +1,73 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center">Dynamic Form</h2><hr>
+            <form [formGroup]="userprofileForm" (ngSubmit)=onSubmit()>
+
+                <div class="col-md-6">
+                    <label for="" >First Name:
+                    </label>
+                    <input class="form-control" type="text" formControlName="firstname">
+
+
+
+                       <br>
+                <div formGroupName="address">
+                    <h3>  <b>Address</b> </h3>
+                    <label for="">
+                        Address1:
+                    </label>
+                    <input class="form-control" type="text" formControlName="address1">
+
+                    <label for="">
+                        Address2:
+                    </label>
+                    <input class="form-control" type="text" formControlName="address2">
+
+                    <label for="">
+                        State:
+                    </label>
+                    <input class="form-control" type="text" formControlName="state">
+
+                    <label for="">
+                        Zip:
+                    </label>
+                    <input class="form-control" type="text" formControlName="zip">
+
+                </div>
+                   
+                </div>
+
+
+                <div class="col-md-6">
+                    <label for="">
+                        Last Name:
+                    </label>
+                    <input class="form-control" type="text" formControlName="lastname">
+                </div>
+            
+            <br>
+                <div formArrayName="mobiles" class="col-md-6">
+                    <br>
+                    <h4><b> Enter Mobile Number:</b>
+                    </h4>
+                    <button (click)="addNewMobile()" class="btn btn-warning">
+                        Add new mobile
+                    </button>
+            <br><hr>
+                    <div *ngFor="let mobile of mobiles.controls;let i = index;">
+                        <label for=""> Mobile {{i+1}}</label>
+                        <input class="form-control" type="text" [formControlName]="i">
+                        <span style="float: right;" (click)="remove(i)">Remove</span>
+                    </div>
+                </div>
+
+                <br>
+            
+                <button class="btn btn-primary" [disabled]="!userprofileForm.valid">Submit</button>
+                
+            </form>
+        </div>
+    </div>
+</div>
+
