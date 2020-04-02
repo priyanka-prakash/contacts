@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from  '@angular/common/http';
 
 
+
 import { ContactListComponent } from './contact-list/contact-list.component';
 import { contactService } from './services/contacts.service';
 import { ContactDetailComponent } from './contact-detail/contact-detail.component';
@@ -23,6 +24,8 @@ import { RegistrationComponent } from './registration/registration.component';
 import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 import { HomeComponent } from './home/home.component';
 import { ChildComponent } from './child/child.component';
+import { StudentComponent } from './student/student.component';
+import { TestmoduleModule } from './testmodule/testmodule.module';
 
 
 
@@ -38,7 +41,9 @@ import { ChildComponent } from './child/child.component';
     RegistrationComponent,
     DynamicFormComponent,
     HomeComponent,
-    ChildComponent
+    ChildComponent,
+    StudentComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -52,7 +57,8 @@ import { ChildComponent } from './child/child.component';
     FormsModule,
     MatInputModule,
     DataTablesModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TestmoduleModule
     
   ],
   providers: [contactService],

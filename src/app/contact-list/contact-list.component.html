@@ -20,6 +20,9 @@
                  <button style="margin-left:10px;" [routerLink]="['/Interaction']" class="btn btn-warning">
                     Component Interaction 
                  </button>
+                 <button style="margin-left:10px;" [routerLink]="['/TestModule']" class="btn btn-danger">
+                    Lazy Loading 
+                 </button>
                 
             </div>
         </div>
@@ -40,7 +43,15 @@
                     </tr>
                 </tbody>
             </table>
-            
+        </div>
+<hr>
+        <div class="row">
+            <div class="col-md-12">
+                <h3>-----Lazy loading-------</h3>
+                <button routerLink="/customers">Customers</button>
+                <button routerLink="/order">Orders</button>
+
+            </div>
         </div>
     </div>
 </div>

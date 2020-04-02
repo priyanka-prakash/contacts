@@ -1,0 +1,19 @@
+<p>order works!</p>
+<p>The Order date is {{ orderdate | date }}</p>
+
+<!-- parameterised pipe -->
+<p>The Order date is {{ orderdate | date:"MM/dd/yy" }} </p>
+
+
+  <p>The hero's birthday is {{ birthday | date:format }}</p>
+  <button (click)="toggleFormat()">Toggle Format</button>
+
+  <!-- chained  -->
+  <p>
+    The chained hero's birthday is
+    {{ birthday | date | uppercase}}
+  </p>
+  <p>
+    The chained hero's birthday is
+    {{  birthday | date:'fullDate' | uppercase}}
+  </p>

@@ -21,7 +21,6 @@ export class RegistrationComponent implements OnInit {
     skillsArray: this.formbuilder.array([ ])
 
     
-    
   });
 
   arrayItems: {

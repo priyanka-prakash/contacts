@@ -8,6 +8,7 @@ import { AngDatatableComponent } from './ang-datatable/ang-datatable.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 import { HomeComponent } from './home/home.component';
+import { LazyloadComponent } from './testmodule/lazyload/lazyload.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,28 @@ const routes: Routes = [
   { path: 'ListUsingDatatable', component: AngDatatableComponent},
   { path: 'Registration', component: RegistrationComponent},
   { path: 'DynamicForm', component: DynamicFormComponent},
-  { path: 'Interaction', component: HomeComponent}
+  { path: 'Interaction', component: HomeComponent},
+  { path: 'Test', loadChildren: './testmodule/testmodule.module.ts#TestmoduleModule'},
+
+
+
+  
+  // lazy loading 
+  { path: 'TestModule', loadChildren:'./testmodule/testmodule.module#TestmoduleModule'},
+
+  {
+    path: 'customers',
+    loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule)
+  },
+  { path: 'order', loadChildren: () => import('./order/order.module').then(m => m.OrderModule) },
+  {
+    path: '',
+    redirectTo: '',
+    pathMatch: 'full'
+  }
+
+
+
 ];
 
 @NgModule({

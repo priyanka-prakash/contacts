@@ -2,8 +2,16 @@
     <div class="row">
         <div class="col-md-12">
             <h2>Component Interaction</h2>
-            <cust-generator (customerGenerated)="onCustomerGenerated($event)"></cust-generator>
 
+            <!-- here cust generator is the child component (component child) -->
+            <cust-generator (customerGenerated)="onCustomerGenerated($event)"></cust-generator>
+            <hr>
+            <h2> -------------------Interation using service -----------</h2>
+            <br>
+            <h2>Teacher</h2>
+            <button (click)="greetStudent()" class="btn btn-primary">Greet Student</button>
+            <button (click)="appreciateStudent()" class="btn btn-success">Appreciate Student</button>
+            <app-student></app-student>
 
         </div>
 
