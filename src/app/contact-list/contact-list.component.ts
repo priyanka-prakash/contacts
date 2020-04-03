@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { contactService } from '../services/contacts.service';
+import { elementAt } from 'rxjs/operators';
 
 @Component({
   selector: 'app-contact-list',
@@ -16,7 +17,16 @@ export class ContactListComponent implements OnInit {
 
   contactList(){
     this.contactService.getContactListData().subscribe((contactlistData: any)=>{
-      console.log(contactlistData);
+     
+      contactlistData.data.forEach(element => {
+        
+        if(element.first_name == "George" || element.first_name == "Charles" ){
+          element.gender = "male";
+        }else{
+          element.gender = "female";
+        }
+        
+      });
       this.contactLists = contactlistData.data;
     })  
   }

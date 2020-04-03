@@ -26,6 +26,7 @@ import { HomeComponent } from './home/home.component';
 import { ChildComponent } from './child/child.component';
 import { StudentComponent } from './student/student.component';
 import { TestmoduleModule } from './testmodule/testmodule.module';
+import { PersonNamePipe } from './person-name.pipe';
 
 
 
@@ -43,6 +44,7 @@ import { TestmoduleModule } from './testmodule/testmodule.module';
     HomeComponent,
     ChildComponent,
     StudentComponent,
+    PersonNamePipe,
     
   ],
   imports: [

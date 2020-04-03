@@ -35,11 +35,16 @@
                 <thead>
                     <th>No: </th>
                     <th>Name</th>
+                    <th>Name using pipes</th>
                 </thead>
                 <tbody>
                     <tr *ngFor = "let contact of contactLists; let i = index">
                         <td> {{i+1}}</td>
                         <td>  <a [routerLink]="['/contactdetail/', contact.id]"> {{contact.first_name+" "+contact.last_name}} </a> </td>
+                       
+                        <!-- using pipes -->
+                        <td>{{ contact | personName }}</td>
+
                     </tr>
                 </tbody>
             </table>

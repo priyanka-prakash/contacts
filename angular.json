@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "contacts"
+  "defaultProject": "contacts",
+  "cli": {
+    "analytics": false
+  }
 }
