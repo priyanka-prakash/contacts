@@ -9,6 +9,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 import { HomeComponent } from './home/home.component';
 import { LazyloadComponent } from './testmodule/lazyload/lazyload.component';
+import { CribListComponent } from './crib-list/crib-list.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,9 @@ const routes: Routes = [
   { path: 'Registration', component: RegistrationComponent},
   { path: 'DynamicForm', component: DynamicFormComponent},
   { path: 'Interaction', component: HomeComponent},
+  { path: 'ReusableComponent', component: CribListComponent},
+
+  
   { path: 'Test', loadChildren: './testmodule/testmodule.module.ts#TestmoduleModule'},
 
 

@@ -1,0 +1,11 @@
+<!-- <p>crib-list works!</p> -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div *ngFor = "let crib of contactLists; let i = index" class="col-sm-3">
+               <app-crib-card [crib]="crib"></app-crib-card>
+            </div>
+        </div>
+    </div>
+</div>
+

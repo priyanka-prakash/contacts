@@ -10,7 +10,7 @@ export class AuthHeaderInterceptor implements HttpInterceptor{
 
         //logic
         console.log("Auth Interceptor Provider");
-        console.log(request.url);
+        console.log(request.url); //shows which url
 
         const authToken = "My Auth";
         const authReq   = request.clone({

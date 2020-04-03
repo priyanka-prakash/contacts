@@ -30,6 +30,7 @@ import { PersonNamePipe } from './person-name.pipe';
 import { CribCardComponent } from './crib-card/crib-card.component';
 import { AuthHeaderInterceptor } from './http-interceptors/auth-header-interceptor';
 import { httpInterceptProviders } from './http-interceptors';
+import { CribListComponent } from './crib-list/crib-list.component';
 
 
 
@@ -49,6 +50,7 @@ import { httpInterceptProviders } from './http-interceptors';
     StudentComponent,
     PersonNamePipe,
     CribCardComponent,
+    CribListComponent,
     
   ],
   imports: [

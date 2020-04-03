@@ -30,6 +30,11 @@
 
                 
             </div>
+            <div style="float: left;">
+                <button style="margin-left:10px;" [routerLink]="['/ReusableComponent']" class="btn btn-danger">
+                    Reusable Component
+                 </button>
+            </div>
         </div>
     </div>
     <hr>
@@ -61,6 +66,13 @@
                 <button routerLink="/customers">Customers</button>
                 <button routerLink="/order">Orders</button>
 
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Reusable Component</h3>
+                <app-crib-list></app-crib-list>
             </div>
         </div>
     </div>
