@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { contactService } from '../services/contacts.service';
 import { elementAt } from 'rxjs/operators';
+import { TestService } from '../services/test.service';
 
 @Component({
   selector: 'app-contact-list',
   templateUrl: './contact-list.component.html',
   styleUrls: ['./contact-list.component.css'],
-  providers:[contactService]
+  providers:[contactService,TestService]
 })
 export class ContactListComponent implements OnInit {
   contactLists:any;
   slno = 0;
-  constructor(private contactService:contactService) { 
+  constructor(private contactService:contactService, private testService:TestService) { 
     this.contactList();
   }
 
@@ -32,6 +33,14 @@ export class ContactListComponent implements OnInit {
   }
   
   ngOnInit(): void {
+  }
+
+
+  /** Interceptor */
+
+  fetch(){
+    this.testService.fetch().
+      subscribe(data => console.log(data));
   }
 
 }

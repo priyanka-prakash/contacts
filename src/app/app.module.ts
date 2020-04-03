@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule,routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from  '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from  '@angular/common/http';
 
 
 
@@ -27,6 +27,9 @@ import { ChildComponent } from './child/child.component';
 import { StudentComponent } from './student/student.component';
 import { TestmoduleModule } from './testmodule/testmodule.module';
 import { PersonNamePipe } from './person-name.pipe';
+import { CribCardComponent } from './crib-card/crib-card.component';
+import { AuthHeaderInterceptor } from './http-interceptors/auth-header-interceptor';
+import { httpInterceptProviders } from './http-interceptors';
 
 
 
@@ -45,6 +48,7 @@ import { PersonNamePipe } from './person-name.pipe';
     ChildComponent,
     StudentComponent,
     PersonNamePipe,
+    CribCardComponent,
     
   ],
   imports: [
@@ -63,7 +67,9 @@ import { PersonNamePipe } from './person-name.pipe';
     TestmoduleModule
     
   ],
-  providers: [contactService],
+  providers: [contactService, httpInterceptProviders],
+
+  // providers: [contactService,{provide: HTTP_INTERCEPTORS, useClass: AuthHeaderInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
